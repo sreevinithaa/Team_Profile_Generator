@@ -137,7 +137,7 @@ const ReQuestion = (data) => {
     .prompt({
       type: "list",
       name: "option",
-      message: "Do you want to add another team member??",
+      message: "Do you want to add another team member?",
       choices: ["yes", "No"],
     })
     .then((response) => {

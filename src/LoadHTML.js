@@ -9,7 +9,7 @@ function GetContentByRole(obj) {
   if (obj.getRole() == "Manager") {
     content = "OfficeNumber : " + obj.getOfficeNumber();
   } else if (obj.getRole() == "Engineer") {
-    content = `Github : <a href="https://github.com/${obj.getGithub()}">${obj.getGithub()}</a>`;
+    content = `Github : <a href="https://github.com/${obj.getGithub()}" target="_blank">${obj.getGithub()}</a>`;
   } else {
     content = "School : " + obj.getSchool();
   }
@@ -53,7 +53,7 @@ function generateHTMLPage(members) {
         <div class="card-body mb-2 bg-light text-dark p-4">
        
            <div class="row">ID : ${element.getId()}</div>
-            <div class="row">Email : <a href="MailTo:${element.getEmail()}">${element.getEmail()}</a></div>
+            <div class="row">Email : <a href="MailTo:${element.getEmail()}" target="_blank">${element.getEmail()}</a></div>
             <div class="row">${GetContentByRole(element)}</div>
         </div>
     </div>`);
