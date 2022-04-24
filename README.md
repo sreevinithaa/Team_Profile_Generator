@@ -61,12 +61,12 @@ Run the following command at th root of your project and answer the prompted que
 ## Vedio of functionality
 
 ![Team profile generator gif link](./assets/vedio/Readme%20Generator_%20Apr%2018%2C%202022%206_46%20PM.gif)<br>
-The full movie file showing functionality of the application can be found [here](https://sreevinithaa.github.io/ReadmeGenerator/assets/vedio/Readme%20Generator_%20Apr%2018,%202022%206_46%20PM.mp4)
+The full movie file showing functionality of the application can be found [here](https://sreevinithaa.github.io/Team_Profile_Generator/src/assets/vedio/Team_Profile_Generator.mp4)
 
 
 ## Repository
 
-You can get the code in the following link. https://github.com/sreevinithaa/ReadmeGenerator.git
+You can get the code in the following link. https://github.com/sreevinithaa/Team_Profile_Generator.git
 
 
 ## Questions
