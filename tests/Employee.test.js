@@ -1,33 +1,45 @@
 const Employee = require('../lib/Employee.js');
 describe('Employee class !', () => {
+    const name = 'Vinitha';
+    const email = 'sreevinithaa@gmail.com';
+    const id = 1;
     describe("Initialization", () => {
-        it("should create an object with a 'name','email' and 'id' property set to the name,email and id argument provided when called with the 'new' keyword.When checking name property it should match with the value from what passed through argument", () => {
-            // Arrange
-            const name = 'Vinitha';
-            const email = 'sreevinithaa@gmail.com';
-            const id = 1;
+       
+        it("should create an object with a 'name','email' and 'id' property set to the name,email and id argument provided when called with the 'new' keyword.", () => {
+          
+            // Act
+            const obj = new Employee(id,name,email);
+      
+            // Assert
+            expect(obj).toBeInstanceOf(Employee);
+          });
+          it("Should throw exception if fail to pass three arguments", () => {
+          
+            const emp = () => new Employee(email);
+            const err = new Error(
+              "Expected parameter id to be a non empty number"
+            );
+      
+            // Assert
+            expect(emp).toThrowError(Error);
+          });
+          it("should retun name property value from what passed through argument", () => {
             // Act
             const obj = new Employee(id,name,email);
       
             // Assert
             expect(obj.name).toEqual(name);
           });
-          it("should create an object with a 'name','email' and 'id' property set to the name,email and id argument provided when called with the 'new' keyword.When checking id property it should match with the value from what passed through argument", () => {
-            // Arrange
-            const name = 'Vinitha';
-            const email = 'sreevinithaa@gmail.com';
-            const id = 1;
+          it("should return id property value which match with the value from what passed through argument", () => {
+             
             // Act
             const obj = new Employee(id,name,email);
       
             // Assert
             expect(obj.id).toEqual(id);
           });
-          it("should create an object with a 'name','email' and 'id' property set to the name,email and id argument provided when called with the 'new' keyword.When checking email property it should match with the value from what passed through argument", () => {
-            // Arrange
-            const name = 'Vinitha';
-            const email = 'sreevinithaa@gmail.com';
-            const id = 1;
+          it("should return email property value which match with the value from what passed through argument", () => {
+            
             // Act
             const obj = new Employee(id,name,email);
       
@@ -35,10 +47,8 @@ describe('Employee class !', () => {
             expect(obj.email).toEqual(email);
           });
           it("should throw an error if not provided 'id' a value.First parameter should be number", () => {
-            // Arrange
-            const name = 'Vinitha';
-            const email = 'sreevinithaa@gmail.com';
-            const emp = () => new Employee(name,email);
+           
+            const emp = () => new Employee(name,name,email);
             const err = new Error(
               "Expected parameter id to be a non empty number"
             );
@@ -46,25 +56,12 @@ describe('Employee class !', () => {
             // Assert
             expect(emp).toThrowError(err);
           });
-          it("should throw an error if not provided 'name'  argument a value", () => {
-            // Arrange
-            const id = 1;
-            const emp = () => new Employee(id);
+        
+          it("should throw an error if not provided valid 'email'", () => {
+           
+            const emp = () => new Employee(id,name,name);
             const err = new Error(
-              "Expected parameter name to be a non empty string"
-            );
-      
-            // Assert
-            expect(emp).toThrowError(err);
-          });
-          it("should throw an error if not provided 'email' a  value", () => {
-            // Arrange
-            const name = 'Vinitha';
-            const email = 'sreevinithaa@gmail.com';
-            const id = 1;
-            const emp = () => new Employee(id,name);
-            const err = new Error(
-              "Expected parameters 'email' to be a non empty value"
+              "Expected parameters 'email' is not valid"
             );
       
             // Assert
@@ -74,10 +71,7 @@ describe('Employee class !', () => {
     });
     describe("getName()", () => {
         it("getName() function should return name!", () => {
-            // Arrange
-            const name = 'Vinitha';
-            const email = 'sreevinithaa@gmail.com';
-            const id = 1;
+            
             // Act
             const obj = new Employee(id,name,email);
       
@@ -87,10 +81,7 @@ describe('Employee class !', () => {
     });
     describe("getId()", () => {
         it("getId() function should return id!", () => {
-            // Arrange
-            const name = 'Vinitha';
-            const email = 'sreevinithaa@gmail.com';
-            const id = 1;
+           
             // Act
             const obj = new Employee(id,name,email);
       
@@ -101,9 +92,7 @@ describe('Employee class !', () => {
     describe("getEmail()", () => {
         it("getEmail() function should return email!", () => {
             // Arrange
-            const name = 'Vinitha';
-            const email = 'sreevinithaa@gmail.com';
-            const id = 1;
+            
             // Act
             const obj = new Employee(id,name,email);
       
@@ -114,9 +103,7 @@ describe('Employee class !', () => {
     describe("getRole()", () => {
         it("getRole() function should return role!", () => {
             // Arrange
-            const name = 'Vinitha';
-            const email = 'sreevinithaa@gmail.com';
-            const id = 1;
+           
             const role=`'Employee'`;
             // Act
             const obj = new Employee(id,name,email);
