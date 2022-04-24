@@ -6,6 +6,8 @@ var inquirer = require("inquirer");
 var LoadHTML = require("./src/LoadHTML.js");
 const fs = require("fs");
 let memebers = [];
+
+//Prompt Questions with validations
 const questions = () => {
   return inquirer.prompt([
     {
@@ -15,6 +17,10 @@ const questions = () => {
       validate(answer) {
         if (!answer) {
           return "Please, fill the team member id!";
+        }
+        const NUMBERRegex = /^0|[1-9]\d*$/;
+        if (!NUMBERRegex.test(answer)) {
+          return "You have to provide a valid number!";
         }
         return true;
       },
@@ -82,6 +88,10 @@ const questions = () => {
         if (!answer) {
           return "Please, fill the team member's officeNumber!";
         }
+        const NUMBERRegex = /^0|[1-9]\d*$/;
+        if (!NUMBERRegex.test(answer)) {
+          return "You have to provide a valid number!";
+        }
         return true;
       },
     },
@@ -101,6 +111,8 @@ const questions = () => {
     },
   ]);
 };
+
+//Pushing the objects into the array
 function ConvertIntoObject(obj) {
   switch (obj.role) {
     case "Manager":       
@@ -118,6 +130,7 @@ function ConvertIntoObject(obj) {
   }
 }
 
+//If user wants to add more this will execute
 const ReQuestion = (data) => {
     ConvertIntoObject(data);
   inquirer
@@ -139,12 +152,12 @@ const ReQuestion = (data) => {
       }
     });
 };
+
+//Once finished feeding members html page content will generate in this method.
 function GenrateHTML() {
   const htmlPageContent = LoadHTML.generateHTMLPage(memebers);
-  //console.log(memebers);
-
+  
   const path = __dirname + "/dist/index.html";
-  //console.log(path);
   fs.writeFile(path, htmlPageContent, (err) =>
     err ? console.log(err) : console.log("Successfully created index.html!")
   );
