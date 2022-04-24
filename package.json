@@ -1,0 +1,29 @@
+{
+  "name": "team_profile_generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sreevinithaa/Team_Profile_Generator.git"
+  },
+  "author": "Vinitha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sreevinithaa/Team_Profile_Generator/issues"
+  },
+  "homepage": "https://github.com/sreevinithaa/Team_Profile_Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.2"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
