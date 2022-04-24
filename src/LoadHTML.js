@@ -79,9 +79,10 @@ function generateHTMLPage(members) {
     <div class="container-fluid">
 
         <h1 class="bg-dark text-white border rounded p-5 text-center">My Team Members</h1>
-        <div class="d-flex flex-row p-3 m-3" id="grid">
+        <div class="d-flex flex-row p-3 m-3 justify-content-around" id="grid">
+        <div class="row justify-content-center mb-2">
           ${content}
-           
+          </div>
         </div>
     </div>
 </body>
